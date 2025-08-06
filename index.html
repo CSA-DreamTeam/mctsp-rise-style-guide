@@ -18,21 +18,23 @@
                     },
                     colors: {
                         primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        accent: {
                             400: '#60a5fa',
                             500: '#3b82f6',
                             600: '#2563eb',
                             700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
-                            950: '#172554',
-                        },
-                        accent: {
-                            500: '#667eea',
-                            600: '#764ba2',
                         },
                         slate: {
                             25: '#fcfcfd',
@@ -72,7 +74,7 @@
         }
         
         .bg-hero-pattern {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(102,126,234,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(96,165,250,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
         }
         
         .shimmer-effect::before {
@@ -88,13 +90,19 @@
     </style>
 </head>
     <style>
-        /* Include the design system variables */
+        /* Dark Theme Color Variables */
         :root {
-            /* Brand Colors - Modern Palette */
-            --primary-50: #eff6ff;
-            --primary-100: #dbeafe;
-            --primary-200: #bfdbfe;
-            --primary-300: #93c5fd;
+            /* Dark Theme Background Colors */
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a1f2e;
+            --bg-tertiary: #1e2332;
+            --bg-elevated: #252b3b;
+            
+            /* Brand Colors - Enhanced for Dark */
+            --primary-50: #1e3a8a;
+            --primary-100: #1d4ed8;
+            --primary-200: #2563eb;
+            --primary-300: #3b82f6;
             --primary-400: #60a5fa;
             --primary-500: #3b82f6;
             --primary-600: #2563eb;
@@ -103,32 +111,35 @@
             --primary-900: #1e3a8a;
             --primary-950: #172554;
             
-            /* Refined Color Palette - More Professional */
-            --primary-muted: #6b7cb8;
-            --primary-subtle: #f8fafc;
-            --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --hero-gradient: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.05) 100%);
+            /* Beautiful Accent Colors - Muted Cool Blues */
+            --accent-400: #60a5fa;
+            --accent-500: #3b82f6;
+            --accent-600: #2563eb;
+            --accent-700: #1d4ed8;
+            --accent-gradient: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+            --hero-gradient: linear-gradient(135deg, rgba(96, 165, 250, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%);
             
-            /* Subtle Borders */
-            --border-subtle: rgba(148, 163, 184, 0.2);
-            --border-muted: rgba(148, 163, 184, 0.1);
-            --border-soft: rgba(148, 163, 184, 0.05);
+            /* Dark Theme Borders */
+            --border-subtle: rgba(148, 163, 184, 0.1);
+            --border-muted: rgba(148, 163, 184, 0.15);
+            --border-soft: rgba(148, 163, 184, 0.08);
+            --border-accent: rgba(96, 165, 250, 0.25);
             
-            /* Semantic Colors */
-            --success-50: #ecfdf5;
+            /* Semantic Colors - Dark Theme */
+            --success-50: rgba(16, 185, 129, 0.1);
             --success-500: #10b981;
             --success-600: #059669;
-            --warning-50: #fffbeb;
+            --warning-50: rgba(245, 158, 11, 0.1);
             --warning-500: #f59e0b;
             --warning-600: #d97706;
-            --error-50: #fef2f2;
+            --error-50: rgba(239, 68, 68, 0.1);
             --error-500: #ef4444;
             --error-600: #dc2626;
-            --info-50: #f0f9ff;
+            --info-50: rgba(6, 182, 212, 0.1);
             --info-500: #06b6d4;
             --info-600: #0891b2;
             
-            /* Refined Neutral Scale - Muted and Professional */
+            /* Dark Theme Neutral Scale */
             --gray-50: #f8fafc;
             --gray-100: #f1f5f9;
             --gray-200: #e2e8f0;
@@ -141,23 +152,32 @@
             --gray-900: #0f172a;
             --gray-950: #020617;
             
-            /* Refined Surface Colors */
-            --surface-primary: #ffffff;
-            --surface-secondary: var(--gray-50);
-            --surface-tertiary: var(--gray-100);
-            --surface-elevated: #ffffff;
-            --surface-glass: rgba(255, 255, 255, 0.8);
-            --surface-overlay: rgba(15, 23, 42, 0.6);
-            --surface-hover: rgba(248, 250, 252, 0.8);
+            /* Dark Theme Surface Colors */
+            --surface-primary: var(--bg-elevated);
+            --surface-secondary: var(--bg-tertiary);
+            --surface-tertiary: var(--bg-secondary);
+            --surface-elevated: var(--bg-elevated);
+            --surface-glass: rgba(37, 43, 59, 0.8);
+            --surface-overlay: rgba(15, 20, 25, 0.9);
+            --surface-hover: rgba(37, 43, 59, 0.6);
             
-            /* Refined Text Colors - Better Contrast */
-            --text-primary: var(--gray-900);
-            --text-secondary: var(--gray-600);
-            --text-tertiary: var(--gray-500);
-            --text-muted: var(--gray-400);
-            --text-inverse: #ffffff;
-            --text-disabled: var(--gray-300);
-            --text-accent: var(--primary-600);
+            /* Dark Theme Text Colors */
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-tertiary: #64748b;
+            --text-muted: #475569;
+            --text-inverse: #0f172a;
+            --text-disabled: #334155;
+            --text-accent: var(--accent-500);
+            
+            /* Enhanced Shadows for Dark Theme with Blue Glow */
+            --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            --shadow-glow: 0 0 0 1px rgba(96, 165, 250, 0.15), 0 4px 6px -1px rgba(96, 165, 250, 0.25);
             
             /* Spacing Scale */
             --space-1: 0.25rem;
@@ -172,8 +192,11 @@
             --space-16: 4rem;
             --space-20: 5rem;
             
-            /* Typography Scale - Refined Weights */
+            /* Typography Scale */
             --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-family-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            
+            /* Size Scale - Generic */
             --text-xs: 0.75rem;
             --text-sm: 0.875rem;
             --text-base: 1rem;
@@ -186,25 +209,45 @@
             --text-6xl: 3.75rem;
             --text-7xl: 4.5rem;
             
-            /* Refined Font Weights - Lighter, More Elegant */
-            --font-weight-thin: 100;
-            --font-weight-extralight: 200;
-            --font-weight-light: 300;
-            --font-weight-normal: 400;
-            --font-weight-medium: 500;
-            --font-weight-semibold: 600;
-            --font-weight-bold: 700;
+            /* Semantic Typography Roles - Government Dashboard Optimized */
+            --font-hero-title: var(--text-6xl);        /* Main dashboard title */
+            --font-page-title: var(--text-4xl);        /* Section headers */
+            --font-section-title: var(--text-2xl);     /* Card/component headers */
+            --font-subsection-title: var(--text-xl);   /* Sub-component headers */
+            --font-body: var(--text-base);             /* Main body text */
+            --font-body-sm: var(--text-sm);            /* Secondary body text */
+            --font-caption: var(--text-xs);            /* Labels, captions */
+            --font-stat-value: var(--text-3xl);        /* Dashboard metrics */
+            --font-stat-label: var(--text-sm);         /* Metric labels */
+            --font-button: var(--text-sm);             /* Button text */
+            --font-nav: var(--text-base);              /* Navigation items */
             
-            /* Refined Shadows - More Subtle */
-            --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.03);
-            --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.08);
-            --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.08);
-            --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.08);
-            --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
-            --shadow-2xl: 0 25px 50px -12px rgba(15, 23, 42, 0.12);
-            --shadow-glow: 0 0 0 1px rgba(102, 126, 234, 0.05), 0 4px 6px -1px rgba(102, 126, 234, 0.1);
+            /* Font Weights - Enhanced Government Hierarchy */
+            --font-weight-thin: 100;           /* Hero displays only */
+            --font-weight-extralight: 200;     /* Large headers, elegant emphasis */
+            --font-weight-light: 300;          /* Subheadings, secondary titles */
+            --font-weight-normal: 400;         /* Body text, descriptions */
+            --font-weight-medium: 500;         /* Navigation, labels, buttons */
+            --font-weight-semibold: 600;       /* Important sections, alerts */
+            --font-weight-bold: 700;           /* Strong emphasis, warnings */
             
-            /* Border Radius - More Spacious */
+            /* Line Heights - Optimized for Readability */
+            --line-height-none: 1;             /* Large display text */
+            --line-height-tight: 1.25;         /* Headings, titles */
+            --line-height-snug: 1.375;         /* Subheadings */
+            --line-height-normal: 1.5;         /* Body text, optimal reading */
+            --line-height-relaxed: 1.625;      /* Long-form content */
+            --line-height-loose: 2;            /* Spaced content, captions */
+            
+            /* Letter Spacing - Professional Spacing */
+            --letter-spacing-tighter: -0.05em; /* Large display text */
+            --letter-spacing-tight: -0.025em;  /* Headers */
+            --letter-spacing-normal: 0em;      /* Body text */
+            --letter-spacing-wide: 0.025em;    /* Labels, buttons */
+            --letter-spacing-wider: 0.05em;    /* All caps text */
+            --letter-spacing-widest: 0.1em;    /* Tracking for emphasis */
+            
+            /* Border Radius */
             --radius-sm: 0.5rem;
             --radius-md: 0.75rem;
             --radius-lg: 1rem;
@@ -213,11 +256,21 @@
             --radius-3xl: 2.5rem;
             --radius-full: 9999px;
             
-            /* Enhanced Transitions */
+            /* Transitions */
             --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
             --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
             --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
             --transition-bounce: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            /* Typography Patterns - Government Dashboard Optimized */
+            --typography-dashboard-title: var(--font-hero-title) / var(--line-height-tight) var(--font-family-sans);
+            --typography-section-header: var(--font-section-title) / var(--line-height-tight) var(--font-family-sans);
+            --typography-body-primary: var(--font-body) / var(--line-height-normal) var(--font-family-sans);
+            --typography-body-secondary: var(--font-body-sm) / var(--line-height-normal) var(--font-family-sans);
+            --typography-stat-large: var(--font-stat-value) / var(--line-height-none) var(--font-family-sans);
+            --typography-caption: var(--font-caption) / var(--line-height-tight) var(--font-family-sans);
+            --typography-button: var(--font-button) / var(--line-height-none) var(--font-family-sans);
+            --typography-code: var(--text-sm) / var(--line-height-relaxed) var(--font-family-mono);
         }
 
         /* Base Styles */
@@ -229,12 +282,14 @@
 
         body {
             font-family: var(--font-family-sans);
-            background: linear-gradient(135deg, var(--gray-50) 0%, var(--primary-subtle) 100%);
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
             color: var(--text-primary);
-            line-height: 1.7;
-            font-size: var(--text-base);
+            font: var(--typography-body-primary);
             font-weight: var(--font-weight-normal);
-            letter-spacing: -0.01em;
+            letter-spacing: var(--letter-spacing-normal);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* Beautiful Hero Section with Animation */
@@ -256,7 +311,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(102,126,234,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(96,165,250,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
             opacity: 0.3;
         }
 
@@ -281,28 +336,27 @@
         }
 
         .hero-title {
-            font-size: var(--text-7xl);
+            font: var(--typography-dashboard-title);
             font-weight: var(--font-weight-extralight);
             color: var(--text-primary);
             margin-bottom: var(--space-6);
-            letter-spacing: -0.03em;
-            line-height: 1.1;
+            letter-spacing: var(--letter-spacing-tighter);
             animation: fadeInUp 1s ease-out 0.2s both;
         }
 
         .hero-subtitle {
-            font-size: var(--text-2xl);
+            font: var(--typography-section-header);
             font-weight: var(--font-weight-light);
             color: var(--text-secondary);
             margin-bottom: var(--space-8);
-            letter-spacing: -0.01em;
+            letter-spacing: var(--letter-spacing-tight);
             animation: fadeInUp 1s ease-out 0.4s both;
         }
 
         .hero-description {
-            font-size: var(--text-lg);
+            font: var(--typography-body-primary);
             color: var(--text-tertiary);
-            line-height: 1.8;
+            line-height: var(--line-height-relaxed);
             margin-bottom: var(--space-10);
             animation: fadeInUp 1s ease-out 0.6s both;
         }
@@ -946,7 +1000,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.3), transparent);
         }
 
         /* Loading spinner - Enhanced */
@@ -1040,40 +1094,40 @@
 </head>
 <body>
     <div class="max-w-7xl mx-auto">
-        <!-- Beautiful Hero Section with Tailwind -->
-        <div class="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-primary-50 via-slate-50 to-primary-100 overflow-hidden mb-16">
-            <!-- Background Pattern -->
-            <div class="absolute inset-0 bg-hero-pattern opacity-30"></div>
+        <!-- Beautiful Dark Hero Section -->
+        <div class="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 overflow-hidden mb-16">
+            <!-- Dark Background Pattern -->
+            <div class="absolute inset-0 bg-hero-pattern opacity-10"></div>
             
             <!-- Hero Content -->
             <div class="relative z-10 text-center max-w-4xl px-12 py-12">
-                <h1 class="text-6xl md:text-7xl font-extralight text-slate-900 mb-6 tracking-tight leading-none animate-fade-in-up">
+                <h1 class="text-6xl md:text-7xl font-extralight text-slate-100 mb-6 tracking-tight leading-none animate-fade-in-up">
                     Design Excellence
                 </h1>
-                <p class="text-2xl font-light text-slate-600 mb-8 tracking-tight animate-fade-in-up-delay-1">
-                    RISE TA Tracker Design System
+                <p class="text-2xl font-light text-slate-300 mb-8 tracking-tight animate-fade-in-up-delay-1">
+                    RISE TA Tracker Homepage System
                 </p>
-                <p class="text-lg text-slate-500 leading-relaxed mb-10 animate-fade-in-up-delay-2">
-                    A comprehensive, government-compliant design system built for modern web applications.
+                <p class="text-lg text-slate-400 leading-relaxed mb-10 animate-fade-in-up-delay-2">
+                    A comprehensive, modern design system built for professional web applications.
                     Featuring elegant typography, refined color palettes, and seamless user interactions.
                 </p>
                 
                 <!-- Hero Stats -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 animate-fade-in-up-delay-3">
-                    <div class="group bg-white/80 backdrop-blur-xl p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-white/90">
-                        <span class="block text-3xl font-light text-primary-600 mb-2">50+</span>
+                    <div class="group bg-slate-800/60 backdrop-blur-xl p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-slate-700/60 hover:border-accent-500/30">
+                        <span class="block text-3xl font-light text-accent-500 mb-2">50+</span>
                         <span class="text-sm text-slate-400 font-normal tracking-wider uppercase">Components</span>
                     </div>
-                    <div class="group bg-white/80 backdrop-blur-xl p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-white/90">
-                        <span class="block text-3xl font-light text-primary-600 mb-2">12</span>
+                    <div class="group bg-slate-800/60 backdrop-blur-xl p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-slate-700/60 hover:border-accent-500/30">
+                        <span class="block text-3xl font-light text-accent-500 mb-2">12</span>
                         <span class="text-sm text-slate-400 font-normal tracking-wider uppercase">Color Scales</span>
                     </div>
-                    <div class="group bg-white/80 backdrop-blur-xl p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-white/90">
-                        <span class="block text-3xl font-light text-primary-600 mb-2">100%</span>
+                    <div class="group bg-slate-800/60 backdrop-blur-xl p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-slate-700/60 hover:border-accent-500/30">
+                        <span class="block text-3xl font-light text-accent-500 mb-2">100%</span>
                         <span class="text-sm text-slate-400 font-normal tracking-wider uppercase">Accessible</span>
                     </div>
-                    <div class="group bg-white/80 backdrop-blur-xl p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-white/90">
-                        <span class="block text-3xl font-light text-primary-600 mb-2">∞</span>
+                    <div class="group bg-slate-800/60 backdrop-blur-xl p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-slate-700/60 hover:border-accent-500/30">
+                        <span class="block text-3xl font-light text-accent-500 mb-2">∞</span>
                         <span class="text-sm text-slate-400 font-normal tracking-wider uppercase">Possibilities</span>
                     </div>
                 </div>
@@ -1081,7 +1135,7 @@
         </div>
 
         <!-- Header Section -->
-        <header class="relative bg-gradient-to-br from-accent-500 to-accent-600 text-white p-16 rounded-3xl mb-16 text-center overflow-hidden shadow-2xl">
+        <header class="relative bg-gradient-to-br from-accent-500 to-accent-600 text-white p-16 rounded-3xl mb-16 text-center overflow-hidden shadow-2xl border border-accent-500/20">
             <!-- Glassmorphism overlay -->
             <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm"></div>
             
@@ -1092,87 +1146,155 @@
         </header>
 
         <!-- Color Palette Section -->
-        <section class="bg-white rounded-3xl p-12 mb-12 shadow-sm border border-slate-200/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative">
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
             <!-- Subtle top border -->
-            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
             
             <div class="relative">
-                <h2 class="text-4xl font-light mb-10 text-slate-400 tracking-tight pb-4 relative">
+                <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
                     Color Palette
                     <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
                 </h2>
                 
-                <h3 class="text-2xl font-light mb-6 text-slate-600 tracking-tight">Primary Colors</h3>
+                <h3 class="text-2xl font-light mb-6 text-slate-400 tracking-tight">Professional Dark Theme Palette</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-                    <!-- Primary Blue Scale -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                        <div class="text-xl font-light mb-6 text-center text-slate-600 tracking-tight">Primary Blue</div>
+                    <!-- Primary Slate Scale -->
+                    <div class="bg-slate-700/30 rounded-2xl p-8 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                        <div class="text-xl font-light mb-6 text-center text-slate-300 tracking-tight">Neutral Grays</div>
                         <div class="space-y-3">
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md" style="background: #eff6ff;"></div>
-                                <span class="font-mono text-sm font-normal">primary-50: #eff6ff</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #f8fafc;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">slate-50: #f8fafc</span>
                             </div>
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md" style="background: #dbeafe;"></div>
-                                <span class="font-mono text-sm font-normal">primary-100: #dbeafe</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #e2e8f0;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">slate-200: #e2e8f0</span>
                             </div>
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md" style="background: #bfdbfe;"></div>
-                                <span class="font-mono text-sm font-normal">primary-200: #bfdbfe</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #94a3b8;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">slate-400: #94a3b8</span>
                             </div>
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md" style="background: #3b82f6;"></div>
-                                <span class="font-mono text-sm font-normal">primary-500: #3b82f6</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #64748b;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">slate-500: #64748b</span>
                             </div>
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md" style="background: #2563eb;"></div>
-                                <span class="font-mono text-sm font-normal">primary-600: #2563eb</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #334155;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">slate-700: #334155</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Semantic Colors -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                        <div class="text-xl font-light mb-6 text-center text-slate-600 tracking-tight">Semantic Colors</div>
+                    <!-- Accent Blues -->
+                    <div class="bg-slate-700/30 rounded-2xl p-8 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                        <div class="text-xl font-light mb-6 text-center text-slate-300 tracking-tight">Accent Blues</div>
                         <div class="space-y-3">
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md bg-emerald-500"></div>
-                                <span class="font-mono text-sm font-normal">success: #10b981</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #60a5fa;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">accent-400: #60a5fa</span>
                             </div>
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md bg-amber-500"></div>
-                                <span class="font-mono text-sm font-normal">warning: #f59e0b</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #3b82f6;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">accent-500: #3b82f6</span>
                             </div>
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md bg-red-500"></div>
-                                <span class="font-mono text-sm font-normal">error: #ef4444</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #2563eb;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">accent-600: #2563eb</span>
                             </div>
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md bg-cyan-500"></div>
-                                <span class="font-mono text-sm font-normal">info: #06b6d4</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #1d4ed8;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">accent-700: #1d4ed8</span>
+                            </div>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl bg-gradient-to-r from-accent-400 to-accent-600"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">accent-gradient</span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Neutral Scale -->
-                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                        <div class="text-xl font-light mb-6 text-center text-slate-600 tracking-tight">Neutral Scale</div>
+                    
+                    <!-- Dark Theme Surfaces -->
+                    <div class="bg-slate-700/30 rounded-2xl p-8 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                        <div class="text-xl font-light mb-6 text-center text-slate-300 tracking-tight">Dark Surfaces</div>
                         <div class="space-y-3">
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md bg-slate-50"></div>
-                                <span class="font-mono text-sm font-normal">slate-50: #f8fafc</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #0f1419;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">bg-primary: #0f1419</span>
                             </div>
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md bg-slate-500"></div>
-                                <span class="font-mono text-sm font-normal">slate-500: #64748b</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #1a1f2e;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">bg-secondary: #1a1f2e</span>
                             </div>
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md bg-slate-700"></div>
-                                <span class="font-mono text-sm font-normal">slate-700: #334155</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: #252b3b;"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">bg-elevated: #252b3b</span>
                             </div>
-                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-50/80 hover:translate-x-0.5 border border-transparent hover:border-slate-200/50">
-                                <div class="w-12 h-12 rounded-lg border border-slate-200/50 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md bg-slate-900"></div>
-                                <span class="font-mono text-sm font-normal">slate-900: #0f172a</span>
+                            <div class="flex items-center gap-4 p-3 rounded-lg transition-all duration-200 hover:bg-slate-600/20 hover:translate-x-0.5 border border-transparent hover:border-slate-500/30">
+                                <div class="w-12 h-12 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background: rgba(37, 43, 59, 0.8);"></div>
+                                <span class="font-mono text-sm font-normal text-slate-300">surface-glass</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Semantic Colors Row -->
+                <h3 class="text-2xl font-light mb-6 text-slate-400 tracking-tight">Semantic Colors</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+                    <!-- Success Colors -->
+                    <div class="bg-slate-700/30 rounded-2xl p-6 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                        <div class="text-lg font-light mb-4 text-center text-slate-300 tracking-tight">Success</div>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-2 rounded-lg transition-all duration-200 hover:bg-slate-600/20">
+                                <div class="w-10 h-10 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105" style="background: #10b981;"></div>
+                                <span class="font-mono text-xs font-normal text-slate-300">#10b981</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg transition-all duration-200 hover:bg-slate-600/20">
+                                <div class="w-10 h-10 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105" style="background: rgba(16, 185, 129, 0.1);"></div>
+                                <span class="font-mono text-xs font-normal text-slate-300">10% opacity</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Warning Colors -->
+                    <div class="bg-slate-700/30 rounded-2xl p-6 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                        <div class="text-lg font-light mb-4 text-center text-slate-300 tracking-tight">Warning</div>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-2 rounded-lg transition-all duration-200 hover:bg-slate-600/20">
+                                <div class="w-10 h-10 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105" style="background: #f59e0b;"></div>
+                                <span class="font-mono text-xs font-normal text-slate-300">#f59e0b</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg transition-all duration-200 hover:bg-slate-600/20">
+                                <div class="w-10 h-10 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105" style="background: rgba(245, 158, 11, 0.1);"></div>
+                                <span class="font-mono text-xs font-normal text-slate-300">10% opacity</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Error Colors -->
+                    <div class="bg-slate-700/30 rounded-2xl p-6 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                        <div class="text-lg font-light mb-4 text-center text-slate-300 tracking-tight">Error</div>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-2 rounded-lg transition-all duration-200 hover:bg-slate-600/20">
+                                <div class="w-10 h-10 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105" style="background: #ef4444;"></div>
+                                <span class="font-mono text-xs font-normal text-slate-300">#ef4444</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg transition-all duration-200 hover:bg-slate-600/20">
+                                <div class="w-10 h-10 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105" style="background: rgba(239, 68, 68, 0.1);"></div>
+                                <span class="font-mono text-xs font-normal text-slate-300">10% opacity</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Info Colors -->
+                    <div class="bg-slate-700/30 rounded-2xl p-6 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                        <div class="text-lg font-light mb-4 text-center text-slate-300 tracking-tight">Info</div>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-2 rounded-lg transition-all duration-200 hover:bg-slate-600/20">
+                                <div class="w-10 h-10 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105" style="background: #06b6d4;"></div>
+                                <span class="font-mono text-xs font-normal text-slate-300">#06b6d4</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg transition-all duration-200 hover:bg-slate-600/20">
+                                <div class="w-10 h-10 rounded-lg border border-slate-600/50 shadow-lg transition-all duration-300 hover:scale-105" style="background: rgba(6, 182, 212, 0.1);"></div>
+                                <span class="font-mono text-xs font-normal text-slate-300">10% opacity</span>
                             </div>
                         </div>
                     </div>
@@ -1180,89 +1302,180 @@
             </div>
         </section>
 
-        <!-- Typography Section -->
-        <section class="bg-white rounded-3xl p-12 mb-12 shadow-sm border border-slate-200/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative">
-            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <!-- Typography Section - Enhanced Government Dashboard Typography -->
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
             
-            <h2 class="text-4xl font-light mb-10 text-slate-400 tracking-tight pb-4 relative">
-                Typography
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
+                Typography System
                 <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
             </h2>
             
-            <div class="space-y-6">
-                <div class="p-8 border border-slate-200/50 rounded-2xl bg-slate-50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <div class="text-sm text-slate-400 font-mono mb-4 font-normal tracking-wider uppercase">text-6xl (60px) - Hero Heading</div>
-                    <div class="text-6xl font-extralight text-slate-900 tracking-tight">RISE TA Tracker Dashboard</div>
+            <div class="space-y-8">
+                <!-- Typography Hierarchy Examples -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Display Typography -->
+                    <div class="bg-slate-700/30 rounded-2xl p-8 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                        <h3 class="text-lg font-light text-slate-300 mb-6 tracking-tight">Display Typography</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="text-xs text-slate-400 font-mono mb-2 uppercase tracking-wider">Dashboard Hero Title</div>
+                                <div style="font: var(--typography-dashboard-title); font-weight: var(--font-weight-extralight); letter-spacing: var(--letter-spacing-tighter); color: var(--text-primary);">
+                                    RISE Operations
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-mono mb-2 uppercase tracking-wider">Section Header</div>
+                                <div style="font: var(--typography-section-header); font-weight: var(--font-weight-light); letter-spacing: var(--letter-spacing-tight); color: var(--text-secondary);">
+                                    Regional Overview
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-mono mb-2 uppercase tracking-wider">Component Title</div>
+                                <div style="font-size: var(--font-subsection-title); line-height: var(--line-height-tight); font-weight: var(--font-weight-medium); letter-spacing: var(--letter-spacing-normal); color: var(--text-primary);">
+                                    Position Status
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Body Typography -->
+                    <div class="bg-slate-700/30 rounded-2xl p-8 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                        <h3 class="text-lg font-light text-slate-300 mb-6 tracking-tight">Body Typography</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="text-xs text-slate-400 font-mono mb-2 uppercase tracking-wider">Primary Body Text</div>
+                                <div style="font: var(--typography-body-primary); font-weight: var(--font-weight-normal); color: var(--text-primary);">
+                                    The Regional Information System Enterprise (RISE) provides comprehensive operational visibility across all task order regions.
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-mono mb-2 uppercase tracking-wider">Secondary Body Text</div>
+                                <div style="font: var(--typography-body-secondary); font-weight: var(--font-weight-normal); color: var(--text-secondary);">
+                                    Real-time insights into recruitment pipelines and performance metrics.
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-mono mb-2 uppercase tracking-wider">Caption & Labels</div>
+                                <div style="font: var(--typography-caption); font-weight: var(--font-weight-medium); letter-spacing: var(--letter-spacing-wide); color: var(--text-muted); text-transform: uppercase;">
+                                    Last Updated: Aug 6, 2025
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="p-8 border border-slate-200/50 rounded-2xl bg-slate-50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <div class="text-sm text-slate-400 font-mono mb-4 font-normal tracking-wider uppercase">text-3xl (30px) - Page Heading</div>
-                    <div class="text-3xl font-light text-slate-900 tracking-tight">Recruiting Dashboard</div>
+                <!-- Dashboard-Specific Typography -->
+                <div class="bg-slate-700/30 rounded-2xl p-8 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                    <h3 class="text-lg font-light text-slate-300 mb-6 tracking-tight">Dashboard Statistics</h3>
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div>
+                            <div class="text-xs text-slate-400 font-mono mb-2 uppercase tracking-wider">Large Stat</div>
+                            <div style="font: var(--typography-stat-large); font-weight: var(--font-weight-extralight); color: var(--accent-400);">
+                                247
+                            </div>
+                            <div style="font-size: var(--font-stat-label); line-height: var(--line-height-tight); font-weight: var(--font-weight-medium); letter-spacing: var(--letter-spacing-wide); color: var(--text-muted); text-transform: uppercase;">
+                                Open Positions
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400 font-mono mb-2 uppercase tracking-wider">Medium Stat</div>
+                            <div style="font-size: var(--text-2xl); line-height: var(--line-height-none); font-weight: var(--font-weight-light); color: var(--success-500);">
+                                18.5
+                            </div>
+                            <div style="font-size: var(--font-stat-label); line-height: var(--line-height-tight); font-weight: var(--font-weight-medium); letter-spacing: var(--letter-spacing-wide); color: var(--text-muted); text-transform: uppercase;">
+                                Avg Days Open
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400 font-mono mb-2 uppercase tracking-wider">Small Stat</div>
+                            <div style="font-size: var(--text-xl); line-height: var(--line-height-none); font-weight: var(--font-weight-normal); color: var(--warning-500);">
+                                12
+                            </div>
+                            <div style="font-size: var(--font-stat-label); line-height: var(--line-height-tight); font-weight: var(--font-weight-medium); letter-spacing: var(--letter-spacing-wide); color: var(--text-muted); text-transform: uppercase;">
+                                New Hires (30d)
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="p-8 border border-slate-200/50 rounded-2xl bg-slate-50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <div class="text-sm text-slate-400 font-mono mb-4 font-normal tracking-wider uppercase">text-xl (20px) - Section Header</div>
-                    <div class="text-xl font-light text-slate-600 tracking-tight">Training Events</div>
-                </div>
-                
-                <div class="p-8 border border-slate-200/50 rounded-2xl bg-slate-50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <div class="text-sm text-slate-400 font-mono mb-4 font-normal tracking-wider uppercase">text-base (16px) - Body Text</div>
-                    <div class="text-base font-normal text-slate-900 leading-relaxed">This is the primary body text used throughout the dashboard for content and descriptions with improved readability.</div>
-                </div>
-                
-                <div class="p-8 border border-slate-200/50 rounded-2xl bg-slate-50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <div class="text-sm text-slate-400 font-mono mb-4 font-normal tracking-wider uppercase">text-sm (14px) - Small Text</div>
-                    <div class="text-sm text-slate-500 font-normal">Metadata, captions, and secondary information</div>
+                <!-- Interactive Elements Typography -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-700/30 rounded-2xl p-8 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                        <h3 class="text-lg font-light text-slate-300 mb-6 tracking-tight">Interactive Elements</h3>
+                        <div class="space-y-4">
+                            <button style="font: var(--typography-button); font-weight: var(--font-weight-medium); letter-spacing: var(--letter-spacing-wide); padding: 12px 24px; background: var(--accent-gradient); color: white; border: none; border-radius: 8px; cursor: pointer;">
+                                View Reports
+                            </button>
+                            <div>
+                                <div style="font-size: var(--font-nav); line-height: var(--line-height-tight); font-weight: var(--font-weight-medium); color: var(--text-primary); padding: 8px 0;">
+                                    🗺️ Regional Operations
+                                </div>
+                                <div style="font-size: var(--font-nav); line-height: var(--line-height-tight); font-weight: var(--font-weight-medium); color: var(--text-primary); padding: 8px 0;">
+                                    📊 Analytics Dashboard
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-700/30 rounded-2xl p-8 border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                        <h3 class="text-lg font-light text-slate-300 mb-6 tracking-tight">Code Typography</h3>
+                        <div style="font: var(--typography-code); background: var(--gray-900); color: var(--gray-200); padding: 16px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                            <div style="color: var(--success-400);">// CSS Custom Property</div>
+                            <div><span style="color: var(--accent-400);">--font-weight-light:</span> <span style="color: var(--warning-400);">300</span>;</div>
+                            <div><span style="color: var(--accent-400);">--line-height-normal:</span> <span style="color: var(--warning-400);">1.5</span>;</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Buttons Section -->
-        <section class="bg-white rounded-3xl p-12 mb-12 shadow-sm border border-slate-200/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative">
-            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
             
-            <h2 class="text-4xl font-light mb-10 text-slate-400 tracking-tight pb-4 relative">
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
                 Buttons
                 <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Primary Button -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <h4 class="font-light text-slate-600 mb-4 text-lg tracking-tight">Primary Actions</h4>
-                    <button class="relative overflow-hidden inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-xl font-normal text-base tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl border border-transparent shimmer-effect">
+                <div class="bg-slate-700/30 p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                    <h4 class="font-light text-slate-300 mb-4 text-lg tracking-tight">Primary Actions</h4>
+                    <button class="relative overflow-hidden inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-xl font-normal text-base tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-accent-500/20 border border-transparent shimmer-effect">
                         Primary Button
                     </button>
                 </div>
                 
                 <!-- Secondary Button -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <h4 class="font-light text-slate-600 mb-4 text-lg tracking-tight">Secondary Actions</h4>
-                    <button class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-slate-900 rounded-xl font-normal text-base tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md border border-slate-200/50 hover:border-slate-300/50 hover:bg-slate-50/80">
+                <div class="bg-slate-700/30 p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                    <h4 class="font-light text-slate-300 mb-4 text-lg tracking-tight">Secondary Actions</h4>
+                    <button class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-slate-600/50 text-slate-100 rounded-xl font-normal text-base tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20 border border-slate-500/30 hover:border-accent-500/30 hover:bg-slate-600/70">
                         Secondary Button
                     </button>
                 </div>
                 
                 <!-- Success Button -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <h4 class="font-light text-slate-600 mb-4 text-lg tracking-tight">Success Actions</h4>
-                    <button class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl font-normal text-base tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl border border-transparent">
+                <div class="bg-slate-700/30 p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                    <h4 class="font-light text-slate-300 mb-4 text-lg tracking-tight">Success Actions</h4>
+                    <button class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl font-normal text-base tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-emerald-500/20 border border-transparent">
                         Success Button
                     </button>
                 </div>
                 
                 <!-- Warning Button -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <h4 class="font-light text-slate-600 mb-4 text-lg tracking-tight">Warning Actions</h4>
-                    <button class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-xl font-normal text-base tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl border border-transparent">
+                <div class="bg-slate-700/30 p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                    <h4 class="font-light text-slate-300 mb-4 text-lg tracking-tight">Warning Actions</h4>
+                    <button class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-xl font-normal text-base tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-amber-500/20 border border-transparent">
                         Warning Button
                     </button>
                 </div>
                 
                 <!-- Error Button -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <h4 class="font-light text-slate-600 mb-4 text-lg tracking-tight">Error Actions</h4>
-                    <button class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl font-normal text-base tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl border border-transparent">
+                <div class="bg-slate-700/30 p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                    <h4 class="font-light text-slate-300 mb-4 text-lg tracking-tight">Error Actions</h4>
+                    <button class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl font-normal text-base tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-red-500/20 border border-transparent">
                         Error Button
                     </button>
                 </div>
@@ -1270,115 +1483,132 @@
         </section>
 
         <!-- Cards Section -->
-        <section class="bg-white rounded-3xl p-12 mb-12 shadow-sm border border-slate-200/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative">
-            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
             
-            <h2 class="text-4xl font-light mb-10 text-slate-400 tracking-tight pb-4 relative">
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
                 Cards
                 <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
             </h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Standard Card -->
-                <div class="bg-white rounded-2xl p-8 border border-slate-200/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-slate-300/50 relative overflow-hidden">
-                    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+                <div class="bg-slate-700/30 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/20 hover:border-accent-500/30 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
                     <div class="mb-6">
-                        <h3 class="text-2xl font-light text-slate-900 mb-2 tracking-tight">Dashboard Card</h3>
-                        <p class="text-slate-500 text-sm tracking-tight">Standard dashboard component</p>
+                        <h3 class="text-2xl font-light text-slate-100 mb-2 tracking-tight">Dashboard Card</h3>
+                        <p class="text-slate-400 text-sm tracking-tight">Standard dashboard component</p>
                     </div>
                     <div class="mb-6">
-                        <p class="text-slate-600 leading-relaxed">This is a standard card component used throughout the dashboard for organizing content.</p>
+                        <p class="text-slate-300 leading-relaxed">This is a standard card component used throughout the dashboard for organizing content.</p>
                     </div>
                     <div class="flex gap-3">
-                        <button class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-xl font-normal text-sm tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+                        <button class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-xl font-normal text-sm tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-500/20">
                             Action
                         </button>
                     </div>
                 </div>
                 
                 <!-- Status Card -->
-                <div class="bg-white rounded-2xl p-8 border border-slate-200/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-slate-300/50 relative overflow-hidden">
-                    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+                <div class="bg-slate-700/30 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/20 hover:border-accent-500/30 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
                     <div class="mb-6">
-                        <h3 class="text-2xl font-light text-slate-900 mb-2 tracking-tight">Status Card</h3>
-                        <p class="text-slate-500 text-sm tracking-tight">With status indicators</p>
+                        <h3 class="text-2xl font-light text-slate-100 mb-2 tracking-tight">Status Card</h3>
+                        <p class="text-slate-400 text-sm tracking-tight">With status indicators</p>
                     </div>
                     <div class="mb-6">
                         <div class="mb-4">
-                            <div class="flex items-center gap-3 p-3 bg-emerald-50/80 rounded-xl border border-emerald-200/50">
-                                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                                <span class="text-emerald-700 font-medium text-sm tracking-tight">Active</span>
+                            <div class="flex items-center gap-3 p-3 bg-emerald-500/20 backdrop-blur-sm rounded-xl border border-emerald-400/30">
+                                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                                <span class="text-emerald-200 font-medium text-sm tracking-tight">Active</span>
                             </div>
                         </div>
-                        <p class="text-slate-600 leading-relaxed">Card showing status information with color-coded indicators.</p>
+                        <p class="text-slate-300 leading-relaxed">Card showing status information with color-coded indicators.</p>
                     </div>
                 </div>
             </div>
         </section>
-        </section>
-
+        
         <!-- Status Indicators Section -->
-        <section class="bg-white rounded-3xl p-12 mb-12 shadow-sm border border-slate-200/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative">
-            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
             
-            <h2 class="text-4xl font-light mb-10 text-slate-400 tracking-tight pb-4 relative">
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
                 Status Indicators
                 <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Success Status -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <h4 class="font-light text-slate-600 mb-4 text-lg tracking-tight">Success Status</h4>
-                    <div class="flex items-center gap-3 p-3 bg-emerald-50/80 rounded-xl border border-emerald-200/50">
-                        <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                        <span class="text-emerald-700 font-medium text-sm tracking-tight">Completed</span>
+                <div class="bg-slate-700/30 p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                    <h4 class="font-light text-slate-300 mb-4 text-lg tracking-tight">Success Status</h4>
+                    <div class="flex items-center gap-3 p-3 bg-emerald-500/20 backdrop-blur-sm rounded-xl border border-emerald-400/30">
+                        <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                        <span class="text-emerald-200 font-medium text-sm tracking-tight">Completed</span>
                     </div>
                 </div>
                 
                 <!-- Warning Status -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <h4 class="font-light text-slate-600 mb-4 text-lg tracking-tight">Warning Status</h4>
-                    <div class="flex items-center gap-3 p-3 bg-amber-50/80 rounded-xl border border-amber-200/50">
-                        <div class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-                        <span class="text-amber-700 font-medium text-sm tracking-tight">In Progress</span>
+                <div class="bg-slate-700/30 p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                    <h4 class="font-light text-slate-300 mb-4 text-lg tracking-tight">Warning Status</h4>
+                    <div class="flex items-center gap-3 p-3 bg-amber-500/20 backdrop-blur-sm rounded-xl border border-amber-400/30">
+                        <div class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
+                        <span class="text-amber-200 font-medium text-sm tracking-tight">In Progress</span>
                     </div>
                 </div>
                 
                 <!-- Error Status -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <h4 class="font-light text-slate-600 mb-4 text-lg tracking-tight">Error Status</h4>
-                    <div class="flex items-center gap-3 p-3 bg-red-50/80 rounded-xl border border-red-200/50">
-                        <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                        <span class="text-red-700 font-medium text-sm tracking-tight">Failed</span>
+                <div class="bg-slate-700/30 p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                    <h4 class="font-light text-slate-300 mb-4 text-lg tracking-tight">Error Status</h4>
+                    <div class="flex items-center gap-3 p-3 bg-red-500/20 backdrop-blur-sm rounded-xl border border-red-400/30">
+                        <div class="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
+                        <span class="text-red-200 font-medium text-sm tracking-tight">Failed</span>
                     </div>
                 </div>
                 
                 <!-- Info Status -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/50 transition-all duration-300 hover:bg-slate-50/80 hover:-translate-y-0.5">
-                    <h4 class="font-light text-slate-600 mb-4 text-lg tracking-tight">Info Status</h4>
-                    <div class="flex items-center gap-3 p-3 bg-blue-50/80 rounded-xl border border-blue-200/50">
-                        <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                        <span class="text-blue-700 font-medium text-sm tracking-tight">Processing</span>
+                <div class="bg-slate-700/30 p-6 rounded-2xl border border-slate-600/30 transition-all duration-300 hover:bg-slate-700/50 hover:-translate-y-0.5 hover:border-accent-500/30">
+                    <h4 class="font-light text-slate-300 mb-4 text-lg tracking-tight">Info Status</h4>
+                    <div class="flex items-center gap-3 p-3 bg-blue-500/20 backdrop-blur-sm rounded-xl border border-blue-400/30">
+                        <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                        <span class="text-blue-200 font-medium text-sm tracking-tight">Pending</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Shadows & Elevation Section -->
-        <section class="bg-white rounded-3xl p-12 mb-12 shadow-sm border border-slate-200/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative">
-            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
             
-            <h2 class="text-4xl font-light mb-10 text-slate-400 tracking-tight pb-4 relative">
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
                 Shadows & Elevation
                 <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/50 text-center transition-all duration-300 hover:-translate-y-1 shadow-sm">
-                    <div class="bg-white p-6 rounded-xl shadow-sm mb-4 border border-slate-200/50">
-                        <strong class="text-slate-900 font-medium">shadow-sm</strong><br>
-                        <span class="text-slate-600 text-sm">Minimal depth</span>
+                <div class="bg-slate-700/30 p-8 rounded-2xl border border-slate-600/30 text-center transition-all duration-300 hover:-translate-y-1 shadow-xl hover:shadow-2xl hover:shadow-black/20">
+                    <div class="bg-slate-600/50 p-6 rounded-xl shadow-sm mb-4 border border-slate-500/30">
+                        <strong class="text-slate-100 font-medium">shadow-sm</strong><br>
+                        <span class="text-slate-400 text-sm">Minimal depth</span>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-700/30 p-8 rounded-2xl border border-slate-600/30 text-center transition-all duration-300 hover:-translate-y-1 shadow-xl hover:shadow-2xl hover:shadow-black/20">
+                    <div class="bg-slate-600/50 p-6 rounded-xl shadow-lg mb-4 border border-slate-500/30">
+                        <strong class="text-slate-100 font-medium">shadow-lg</strong><br>
+                        <span class="text-slate-400 text-sm">Medium depth</span>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-700/30 p-8 rounded-2xl border border-slate-600/30 text-center transition-all duration-300 hover:-translate-y-1 shadow-xl hover:shadow-2xl hover:shadow-black/20">
+                    <div class="bg-slate-600/50 p-6 rounded-xl shadow-2xl mb-4 border border-slate-500/30">
+                        <strong class="text-slate-100 font-medium">shadow-2xl</strong><br>
+                        <span class="text-slate-400 text-sm">Strong depth</span>
+                    </div>
+                </div>
+            </div>
+        </section>
                     </div>
                 </div>
                 
@@ -1386,54 +1616,53 @@
                     <div class="bg-white p-6 rounded-xl shadow-md mb-4 border border-slate-200/50">
                         <strong class="text-slate-900 font-medium">shadow-md</strong><br>
                         <span class="text-slate-600 text-sm">Medium elevation</span>
+                </div>
+                
+                <div class="bg-slate-700/30 p-8 rounded-2xl border border-slate-600/30 text-center transition-all duration-300 hover:-translate-y-1 shadow-xl hover:shadow-2xl hover:shadow-black/20">
+                    <div class="bg-slate-600/50 p-6 rounded-xl shadow-md mb-4 border border-slate-500/30">
+                        <strong class="text-slate-100 font-medium">shadow-md</strong><br>
+                        <span class="text-slate-400 text-sm">Medium elevation</span>
                     </div>
                 </div>
                 
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/50 text-center transition-all duration-300 hover:-translate-y-1">
-                    <div class="bg-white p-6 rounded-xl shadow-lg mb-4 border border-slate-200/50">
-                        <strong class="text-slate-900 font-medium">shadow-lg</strong><br>
-                        <span class="text-slate-600 text-sm">Large elevation</span>
+                <div class="bg-slate-700/30 p-8 rounded-2xl border border-slate-600/30 text-center transition-all duration-300 hover:-translate-y-1 shadow-xl hover:shadow-2xl hover:shadow-black/20">
+                    <div class="bg-slate-600/50 p-6 rounded-xl shadow-xl mb-4 border border-slate-500/30">
+                        <strong class="text-slate-100 font-medium">shadow-xl</strong><br>
+                        <span class="text-slate-400 text-sm">Extra large</span>
                     </div>
                 </div>
                 
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/50 text-center transition-all duration-300 hover:-translate-y-1">
-                    <div class="bg-white p-6 rounded-xl shadow-xl mb-4 border border-slate-200/50">
-                        <strong class="text-slate-900 font-medium">shadow-xl</strong><br>
-                        <span class="text-slate-600 text-sm">Extra large</span>
-                    </div>
-                </div>
-                
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/50 text-center transition-all duration-300 hover:-translate-y-1">
-                    <div class="bg-white p-6 rounded-xl shadow-2xl mb-4 border border-slate-200/50">
-                        <strong class="text-slate-900 font-medium">shadow-2xl</strong><br>
-                        <span class="text-slate-600 text-sm">Maximum elevation</span>
+                <div class="bg-slate-700/30 p-8 rounded-2xl border border-slate-600/30 text-center transition-all duration-300 hover:-translate-y-1 shadow-xl hover:shadow-2xl hover:shadow-black/20">
+                    <div class="bg-slate-600/50 p-6 rounded-xl shadow-2xl mb-4 border border-slate-500/30">
+                        <strong class="text-slate-100 font-medium">shadow-2xl</strong><br>
+                        <span class="text-slate-400 text-sm">Maximum elevation</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Spacing Section -->
-        <section class="bg-white rounded-3xl p-12 mb-12 shadow-sm border border-slate-200/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative">
-            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
             
-            <h2 class="text-4xl font-light mb-10 text-slate-400 tracking-tight pb-4 relative">
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
                 Spacing Scale
                 <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
             </h2>
             
             <div class="space-y-6">
-                <div class="flex items-center gap-8 p-4 bg-slate-50 rounded-xl border border-slate-200/50">
-                    <span class="text-slate-600 font-medium text-sm w-32 tracking-tight">space-1 (4px)</span>
+                <div class="flex items-center gap-8 p-4 bg-slate-700/30 rounded-xl border border-slate-600/30">
+                    <span class="text-slate-300 font-medium text-sm w-32 tracking-tight">space-1 (4px)</span>
                     <div class="h-4 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full w-1"></div>
-                    <span class="text-slate-500 text-sm">Fine adjustments</span>
+                    <span class="text-slate-400 text-sm">Fine adjustments</span>
                 </div>
-                <div class="flex items-center gap-8 p-4 bg-slate-50 rounded-xl border border-slate-200/50">
-                    <span class="text-slate-600 font-medium text-sm w-32 tracking-tight">space-2 (8px)</span>
+                <div class="flex items-center gap-8 p-4 bg-slate-700/30 rounded-xl border border-slate-600/30">
+                    <span class="text-slate-300 font-medium text-sm w-32 tracking-tight">space-2 (8px)</span>
                     <div class="h-4 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full w-2"></div>
-                    <span class="text-slate-500 text-sm">Small gaps</span>
+                    <span class="text-slate-400 text-sm">Small gaps</span>
                 </div>
-                <div class="flex items-center gap-8 p-4 bg-slate-50 rounded-xl border border-slate-200/50">
-                    <span class="text-slate-600 font-medium text-sm w-32 tracking-tight">space-4 (16px)</span>
+                <div class="flex items-center gap-8 p-4 bg-slate-700/30 rounded-xl border border-slate-600/30">
+                    <span class="text-slate-300 font-medium text-sm w-32 tracking-tight">space-4 (16px)</span>
                     <div class="h-4 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full w-4"></div>
                     <span class="text-slate-500 text-sm">Standard spacing</span>
                 </div>
@@ -1451,71 +1680,539 @@
         </section>
 
         <!-- Interactive Elements Section -->
-        <section class="bg-white rounded-3xl p-12 mb-12 shadow-sm border border-slate-200/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative">
-            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
             
-            <h2 class="text-4xl font-light mb-10 text-slate-400 tracking-tight pb-4 relative">
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
                 Interactive Elements
                 <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
             </h2>
             
-            <h3 class="text-2xl font-light text-slate-600 mb-8 tracking-tight">Hover Effects</h3>
+            <!-- Hover Effects -->
             <div class="mb-12">
-                <div class="bg-gradient-to-br from-white to-slate-50/50 p-8 rounded-2xl border border-slate-200/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-slate-300/50 cursor-pointer text-center">
-                    <strong class="text-slate-900 font-medium text-lg">Hover over me!</strong><br>
-                    <span class="text-slate-600 text-sm">Demonstrates lift and shadow transition</span>
+                <h3 class="text-2xl font-light text-slate-400 mb-8 tracking-tight">Hover Effects</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Card Hover -->
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-600/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/20 hover:border-accent-500/30 cursor-pointer">
+                        <div class="text-center">
+                            <strong class="text-slate-100 font-medium text-lg">Dashboard Card</strong><br>
+                            <span class="text-slate-400 text-sm">Hover for lift effect</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Button Hover -->
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-600/30">
+                        <div class="text-center">
+                            <button class="px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-xl font-normal text-sm tracking-tight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent-500/20 hover:from-accent-400 hover:to-accent-500">
+                                Interactive Button
+                            </button>
+                            <p class="text-slate-400 text-sm mt-3">Button with glow effect</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <h3 class="text-2xl font-light text-slate-600 mb-8 tracking-tight">Loading States</h3>
-            <div class="text-center">
-                <div class="inline-flex items-center justify-center w-8 h-8">
-                    <div class="w-6 h-6 border-2 border-accent-200 border-t-accent-500 rounded-full animate-spin"></div>
+            
+            <!-- Loading States -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-light text-slate-400 mb-8 tracking-tight">Loading States</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Spinner -->
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-600/30 text-center">
+                        <div class="inline-flex items-center justify-center w-8 h-8 mb-4">
+                            <div class="w-6 h-6 border-2 border-accent-300/30 border-t-accent-400 rounded-full animate-spin"></div>
+                        </div>
+                        <p class="text-slate-400 text-sm">Loading Spinner</p>
+                    </div>
+                    
+                    <!-- Pulse -->
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-600/30 text-center">
+                        <div class="w-16 h-4 bg-slate-600/50 rounded-full mx-auto mb-4 animate-pulse"></div>
+                        <p class="text-slate-400 text-sm">Skeleton Loading</p>
+                    </div>
+                    
+                    <!-- Progress -->
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-600/30 text-center">
+                        <div class="w-full bg-slate-600/50 rounded-full h-2 mb-4">
+                            <div class="bg-gradient-to-r from-accent-400 to-accent-500 h-2 rounded-full animate-pulse" style="width: 65%"></div>
+                        </div>
+                        <p class="text-slate-400 text-sm">Progress Bar</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Form Elements -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-light text-slate-400 mb-8 tracking-tight">Form Elements</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-600/30">
+                        <h4 class="text-lg font-light text-slate-300 mb-4">Input Fields</h4>
+                        <div class="space-y-4">
+                            <input type="text" placeholder="Search regions..." class="w-full px-4 py-3 bg-slate-600/50 border border-slate-500/30 rounded-lg text-slate-300 placeholder-slate-400 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 transition-all duration-200">
+                            <select class="w-full px-4 py-3 bg-slate-600/50 border border-slate-500/30 rounded-lg text-slate-300 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 transition-all duration-200">
+                                <option>All Regions</option>
+                                <option>Region 1</option>
+                                <option>Region 2</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-600/30">
+                        <h4 class="text-lg font-light text-slate-300 mb-4">Toggle Switches</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-300 text-sm">Real-time Updates</span>
+                                <div class="relative">
+                                    <input type="checkbox" class="sr-only" checked>
+                                    <div class="w-10 h-6 bg-accent-500 rounded-full shadow-inner cursor-pointer">
+                                        <div class="w-4 h-4 bg-white rounded-full shadow transform translate-x-5 translate-y-1 transition-transform"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-300 text-sm">Dark Mode</span>
+                                <div class="relative">
+                                    <input type="checkbox" class="sr-only">
+                                    <div class="w-10 h-6 bg-slate-600 rounded-full shadow-inner cursor-pointer">
+                                        <div class="w-4 h-4 bg-white rounded-full shadow transform translate-x-1 translate-y-1 transition-transform"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dashboard-Specific Interactions -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-light text-slate-400 mb-8 tracking-tight">Dashboard Interactions</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Filter Chips -->
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-6 rounded-2xl border border-slate-600/30">
+                        <h4 class="text-lg font-light text-slate-300 mb-4">Filter Chips</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-accent-500/20 text-accent-400 rounded-full text-sm border border-accent-500/30 cursor-pointer hover:bg-accent-500/30">Active</span>
+                            <span class="px-3 py-1 bg-slate-600/50 text-slate-300 rounded-full text-sm border border-slate-500/30 cursor-pointer hover:bg-slate-600/70">Pending</span>
+                            <span class="px-3 py-1 bg-slate-600/50 text-slate-300 rounded-full text-sm border border-slate-500/30 cursor-pointer hover:bg-slate-600/70">Filled</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Menu -->
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-6 rounded-2xl border border-slate-600/30">
+                        <h4 class="text-lg font-light text-slate-300 mb-4">Quick Actions</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:bg-slate-600/50 hover:text-accent-400 rounded-lg cursor-pointer transition-all duration-200">
+                                <span>📊</span> Export Report
+                            </div>
+                            <div class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:bg-slate-600/50 hover:text-accent-400 rounded-lg cursor-pointer transition-all duration-200">
+                                <span>📧</span> Send Alert
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Notification Badge -->
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-6 rounded-2xl border border-slate-600/30">
+                        <h4 class="text-lg font-light text-slate-300 mb-4">Notifications</h4>
+                        <div class="relative inline-block">
+                            <div class="w-10 h-10 bg-accent-500 rounded-full flex items-center justify-center text-white">
+                                <span>🔔</span>
+                            </div>
+                            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-xs text-white animate-pulse">
+                                3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Interactions -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-light text-slate-400 mb-8 tracking-tight">Mobile Touch Elements</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-600/30">
+                        <h4 class="text-lg font-light text-slate-300 mb-4">Touch Targets</h4>
+                        <div class="space-y-4">
+                            <button class="w-full px-6 py-4 bg-accent-500/20 text-accent-400 rounded-lg border border-accent-500/30 hover:bg-accent-500/30 transition-all duration-200 min-h-[44px]">
+                                Touch-Friendly Button (44px min)
+                            </button>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button class="px-4 py-3 bg-slate-600/50 text-slate-300 rounded-lg hover:bg-slate-600/70 transition-colors min-h-[44px]">Export</button>
+                                <button class="px-4 py-3 bg-slate-600/50 text-slate-300 rounded-lg hover:bg-slate-600/70 transition-colors min-h-[44px]">Share</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-700/30 backdrop-blur-sm p-8 rounded-2xl border border-slate-600/30">
+                        <h4 class="text-lg font-light text-slate-300 mb-4">Swipe Actions</h4>
+                        <div class="text-center">
+                            <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-600/50 rounded-lg text-slate-300">
+                                <span>←</span> Swipe for more <span>→</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mt-3">Gesture-friendly interfaces</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-                <p style="margin-top: var(--space-4); color: var(--text-secondary);">Loading spinner animation</p>
+
+        <!-- Navigation Components Section -->
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
+            
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
+                Navigation Components
+                <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
+            </h2>
+            
+            <!-- Top Navigation Bar -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-light mb-6 text-slate-400 tracking-tight">Top Navigation Bar</h3>
+                <div class="bg-slate-800/60 backdrop-blur-xl rounded-2xl border border-slate-600/30 p-1">
+                    <nav class="flex items-center justify-between p-4">
+                        <div class="flex items-center gap-8">
+                            <div class="text-2xl font-light text-accent-400 tracking-tight">RISE</div>
+                            <div class="hidden md:flex items-center gap-6">
+                                <a href="#" class="text-slate-300 hover:text-accent-400 px-3 py-2 rounded-lg hover:bg-slate-700/50 transition-all duration-200">🗺️ Regional Map</a>
+                                <a href="#" class="text-slate-300 hover:text-accent-400 px-3 py-2 rounded-lg hover:bg-slate-700/50 transition-all duration-200">📊 Analytics</a>
+                                <a href="#" class="text-slate-300 hover:text-accent-400 px-3 py-2 rounded-lg hover:bg-slate-700/50 transition-all duration-200">📋 Reports</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="text-sm text-slate-400">John Smith • Region 5</div>
+                            <div class="w-10 h-10 bg-accent-500 rounded-full flex items-center justify-center text-white font-medium">JS</div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            
+            <!-- Side Navigation -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-light mb-6 text-slate-400 tracking-tight">Side Navigation</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-800/60 backdrop-blur-xl rounded-2xl border border-slate-600/30 p-6">
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3 px-4 py-3 bg-accent-500/20 text-accent-400 rounded-lg border border-accent-500/30">
+                                <span>🗺️</span> Regional Overview
+                            </div>
+                            <div class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-700/50 hover:text-accent-400 rounded-lg transition-all duration-200">
+                                <span>👥</span> Personnel Status
+                            </div>
+                            <div class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-700/50 hover:text-accent-400 rounded-lg transition-all duration-200">
+                                <span>📈</span> Performance Metrics
+                            </div>
+                            <div class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-slate-700/50 hover:text-accent-400 rounded-lg transition-all duration-200">
+                                <span>✈️</span> Travel Planning
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800/60 backdrop-blur-xl rounded-2xl border border-slate-600/30 p-6">
+                        <h4 class="text-lg font-light text-slate-300 mb-4">Quick Actions</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="px-4 py-3 bg-accent-500/20 text-accent-400 rounded-lg border border-accent-500/30 hover:bg-accent-500/30 transition-all duration-200">
+                                New Report
+                            </button>
+                            <button class="px-4 py-3 bg-slate-600/50 text-slate-300 rounded-lg border border-slate-500/30 hover:bg-slate-600/70 transition-all duration-200">
+                                Export Data
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Layout Components -->
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
+            
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
+                Content Sections
+                <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
+            </h2>
+            
+            <!-- Dashboard Grid Layout -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-light mb-6 text-slate-400 tracking-tight">Dashboard Grid Layout</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <!-- Stat Cards -->
+                    <div class="bg-slate-700/30 backdrop-blur-sm rounded-xl p-6 border border-slate-600/30 hover:border-accent-500/30 transition-all duration-300">
+                        <div class="text-3xl font-light text-accent-400 mb-2">247</div>
+                        <div class="text-sm text-slate-400 uppercase tracking-wider">Open Positions</div>
+                        <div class="mt-3 text-xs text-emerald-400">↗ +12 this week</div>
+                    </div>
+                    <div class="bg-slate-700/30 backdrop-blur-sm rounded-xl p-6 border border-slate-600/30 hover:border-accent-500/30 transition-all duration-300">
+                        <div class="text-3xl font-light text-emerald-400 mb-2">94%</div>
+                        <div class="text-sm text-slate-400 uppercase tracking-wider">Fill Rate</div>
+                        <div class="mt-3 text-xs text-emerald-400">↗ +2% this month</div>
+                    </div>
+                    <div class="bg-slate-700/30 backdrop-blur-sm rounded-xl p-6 border border-slate-600/30 hover:border-accent-500/30 transition-all duration-300">
+                        <div class="text-3xl font-light text-amber-400 mb-2">18.5</div>
+                        <div class="text-sm text-slate-400 uppercase tracking-wider">Avg Days Open</div>
+                        <div class="mt-3 text-xs text-amber-400">→ Same as last month</div>
+                    </div>
+                    <div class="bg-slate-700/30 backdrop-blur-sm rounded-xl p-6 border border-slate-600/30 hover:border-accent-500/30 transition-all duration-300">
+                        <div class="text-3xl font-light text-accent-400 mb-2">12</div>
+                        <div class="text-sm text-slate-400 uppercase tracking-wider">New Hires (30d)</div>
+                        <div class="mt-3 text-xs text-emerald-400">↗ +4 from last month</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Cards -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-light mb-6 text-slate-400 tracking-tight">Content Cards</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-700/30 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30 hover:border-accent-500/30 transition-all duration-300">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-light text-slate-300">Regional Performance</h3>
+                            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-sm">Active</span>
+                        </div>
+                        <p class="text-slate-400 mb-6">Track hiring progress and position statuses across all regions in real-time.</p>
+                        <div class="flex gap-3">
+                            <button class="px-4 py-2 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors">View Details</button>
+                            <button class="px-4 py-2 bg-slate-600/50 text-slate-300 rounded-lg hover:bg-slate-600/70 transition-colors">Export</button>
+                        </div>
+                    </div>
+                    <div class="bg-slate-700/30 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30 hover:border-accent-500/30 transition-all duration-300">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-light text-slate-300">Travel Coordination</h3>
+                            <span class="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-sm">Pending</span>
+                        </div>
+                        <p class="text-slate-400 mb-6">Manage travel schedules and coordinate regional visits for optimal coverage.</p>
+                        <div class="flex gap-3">
+                            <button class="px-4 py-2 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors">Schedule</button>
+                            <button class="px-4 py-2 bg-slate-600/50 text-slate-300 rounded-lg hover:bg-slate-600/70 transition-colors">Calendar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Map Ideas -->
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
+            
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
+                Interactive Map Ideas
+                <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
+            </h2>
+            
+            <!-- Map Container Mockup -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-light mb-6 text-slate-400 tracking-tight">Regional Map Interface</h3>
+                <div class="bg-slate-900/60 backdrop-blur-sm rounded-2xl border border-slate-600/30 p-8 relative overflow-hidden">
+                    <!-- Simulated US Map -->
+                    <div class="relative h-96 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-slate-600/30 flex items-center justify-center">
+                        <!-- Mock US outline with regional hotspots -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-6xl text-slate-600/30">🗺️</div>
+                        </div>
+                        
+                        <!-- Regional Hotspots -->
+                        <div class="absolute top-20 left-32 w-4 h-4 bg-accent-400 rounded-full animate-pulse cursor-pointer hover:scale-150 transition-transform"></div>
+                        <div class="absolute top-32 right-24 w-4 h-4 bg-emerald-400 rounded-full animate-pulse cursor-pointer hover:scale-150 transition-transform"></div>
+                        <div class="absolute bottom-32 left-20 w-4 h-4 bg-amber-400 rounded-full animate-pulse cursor-pointer hover:scale-150 transition-transform"></div>
+                        <div class="absolute bottom-20 right-32 w-4 h-4 bg-red-400 rounded-full animate-pulse cursor-pointer hover:scale-150 transition-transform"></div>
+                        <div class="absolute top-24 left-1/2 w-4 h-4 bg-purple-400 rounded-full animate-pulse cursor-pointer hover:scale-150 transition-transform"></div>
+                        
+                        <!-- Hover Tooltip Example -->
+                        <div class="absolute top-16 left-28 bg-slate-800/90 backdrop-blur-sm rounded-lg p-3 border border-accent-500/30 shadow-xl opacity-0 hover:opacity-100 transition-opacity pointer-events-none">
+                            <div class="text-accent-400 font-medium text-sm">Region 1 - Pacific</div>
+                            <div class="text-slate-300 text-xs">45 Open Positions</div>
+                            <div class="text-emerald-400 text-xs">96% Fill Rate</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Legend -->
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-emerald-400 rounded-full"></div>
+                            <span class="text-sm text-slate-300">Excellent (90%+ fill rate)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-accent-400 rounded-full"></div>
+                            <span class="text-sm text-slate-300">Good (75-90% fill rate)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-amber-400 rounded-full"></div>
+                            <span class="text-sm text-slate-300">Needs Attention (60-75%)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                            <span class="text-sm text-slate-300">Critical (<60% fill rate)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Features -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Interactive Features -->
+                <div class="bg-slate-700/30 backdrop-blur-sm rounded-xl p-6 border border-slate-600/30">
+                    <h4 class="text-lg font-light text-slate-300 mb-4">🖱️ Interactive Features</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>• Click regions to drill down</li>
+                        <li>• Hover for quick stats</li>
+                        <li>• Zoom and pan capabilities</li>
+                        <li>• Touch-friendly for mobile</li>
+                    </ul>
+                </div>
+                
+                <!-- Data Overlays -->
+                <div class="bg-slate-700/30 backdrop-blur-sm rounded-xl p-6 border border-slate-600/30">
+                    <h4 class="text-lg font-light text-slate-300 mb-4">📊 Data Overlays</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>• Position fill rates</li>
+                        <li>• Recruitment pipelines</li>
+                        <li>• Travel schedules</li>
+                        <li>• Performance metrics</li>
+                    </ul>
+                </div>
+                
+                <!-- Region Details -->
+                <div class="bg-slate-700/30 backdrop-blur-sm rounded-xl p-6 border border-slate-600/30">
+                    <h4 class="text-lg font-light text-slate-300 mb-4">🎯 Region Details</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>• Quick action buttons</li>
+                        <li>• Status indicators</li>
+                        <li>• Embedded Power BI</li>
+                        <li>• Document access</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Visualization Examples -->
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
+            
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
+                Data Visualization
+                <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Simple Chart Container -->
+                <div class="bg-slate-700/30 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-light text-slate-300">Position Status</h3>
+                        <select class="bg-slate-600/50 text-slate-300 px-3 py-1 rounded-lg border border-slate-500/30 text-sm">
+                            <option>All Regions</option>
+                            <option>Region 1</option>
+                            <option>Region 2</option>
+                        </select>
+                    </div>
+                    <!-- Donut Chart Mockup -->
+                    <div class="relative h-48 flex items-center justify-center">
+                        <div class="text-4xl text-slate-600/50">📊</div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-2xl font-light text-accent-400">73%</div>
+                                <div class="text-xs text-slate-400">FILLED</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-around mt-6 text-sm">
+                        <div class="text-center">
+                            <div class="w-3 h-3 bg-emerald-400 rounded-full mx-auto mb-1"></div>
+                            <div class="text-slate-400">Filled</div>
+                            <div class="text-slate-300">180</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-3 h-3 bg-amber-400 rounded-full mx-auto mb-1"></div>
+                            <div class="text-slate-400">In Progress</div>
+                            <div class="text-slate-300">45</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-3 h-3 bg-red-400 rounded-full mx-auto mb-1"></div>
+                            <div class="text-slate-400">Open</div>
+                            <div class="text-slate-300">22</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Progress Bars -->
+                <div class="bg-slate-700/30 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30">
+                    <h3 class="text-xl font-light text-slate-300 mb-6">Regional Performance</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-slate-300">Region 1 - Pacific</span>
+                                <span class="text-sm text-emerald-400">94%</span>
+                            </div>
+                            <div class="w-full bg-slate-600/50 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-emerald-400 to-emerald-500 h-2 rounded-full" style="width: 94%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-slate-300">Region 2 - Mountain</span>
+                                <span class="text-sm text-accent-400">82%</span>
+                            </div>
+                            <div class="w-full bg-slate-600/50 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-accent-400 to-accent-500 h-2 rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-slate-300">Region 3 - Central</span>
+                                <span class="text-sm text-amber-400">68%</span>
+                            </div>
+                            <div class="w-full bg-slate-600/50 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-amber-400 to-amber-500 h-2 rounded-full" style="width: 68%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm text-slate-300">Region 4 - Atlantic</span>
+                                <span class="text-sm text-red-400">45%</span>
+                            </div>
+                            <div class="w-full bg-slate-600/50 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-red-400 to-red-500 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Code Examples Section -->
-        <section class="bg-white rounded-3xl p-12 mb-12 shadow-sm border border-slate-200/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative">
-            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <section class="bg-slate-800/40 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-slate-700/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-accent-500/30 relative">
+            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
             
-            <h2 class="text-4xl font-light mb-10 text-slate-400 tracking-tight pb-4 relative">
+            <h2 class="text-4xl font-light mb-10 text-slate-300 tracking-tight pb-4 relative">
                 Tailwind CSS Usage
                 <div class="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full"></div>
             </h2>
             
-            <h3 class="text-2xl font-light text-slate-600 mb-6 tracking-tight">Dashboard Card</h3>
-            <div class="bg-slate-900 p-6 rounded-xl mb-8 border border-slate-200/50 overflow-x-auto">
-                <code class="text-emerald-400 text-sm font-mono whitespace-pre-wrap">
-&lt;div class="bg-white rounded-2xl p-8 border border-slate-200/50 
+            <h3 class="text-2xl font-light text-slate-300 mb-6 tracking-tight">Dashboard Card</h3>
+            <div class="bg-slate-900/80 p-6 rounded-xl mb-8 border border-slate-600/30 overflow-x-auto backdrop-blur-sm">
+                <code class="text-emerald-300 text-sm font-mono whitespace-pre-wrap">
+&lt;div class="bg-slate-700/30 rounded-2xl p-8 border border-slate-600/30 
            transition-all duration-500 hover:-translate-y-2 
-           hover:shadow-2xl hover:border-slate-300/50"&gt;
+           hover:shadow-2xl hover:shadow-black/20 hover:border-accent-500/30"&gt;
   &lt;!-- Card content --&gt;
 &lt;/div&gt;</code>
             </div>
 
-            <h3 class="text-2xl font-light text-slate-600 mb-6 tracking-tight">Primary Button</h3>
-            <div class="bg-slate-900 p-6 rounded-xl mb-8 border border-slate-200/50 overflow-x-auto">
-                <code class="text-emerald-400 text-sm font-mono whitespace-pre-wrap">
+            <h3 class="text-2xl font-light text-slate-300 mb-6 tracking-tight">Primary Button</h3>
+            <div class="bg-slate-900/80 p-6 rounded-xl mb-8 border border-slate-600/30 overflow-x-auto backdrop-blur-sm">
+                <code class="text-emerald-300 text-sm font-mono whitespace-pre-wrap">
 &lt;button class="inline-flex items-center justify-center gap-3 
               px-8 py-4 bg-gradient-to-r from-accent-500 
               to-accent-600 text-white rounded-xl font-normal 
               text-base tracking-tight transition-all duration-300 
-              hover:-translate-y-0.5 hover:shadow-xl"&gt;
+              hover:-translate-y-0.5 hover:shadow-2xl 
+              hover:shadow-accent-500/20"&gt;
   Primary Button
 &lt;/button&gt;</code>
             </div>
 
-            <h3 class="text-2xl font-light text-slate-600 mb-6 tracking-tight">Status Indicator</h3>
-            <div class="bg-slate-900 p-6 rounded-xl mb-8 border border-slate-200/50 overflow-x-auto">
-                <code class="text-emerald-400 text-sm font-mono whitespace-pre-wrap">
-&lt;div class="flex items-center gap-3 p-3 bg-emerald-50/80 
-           rounded-xl border border-emerald-200/50"&gt;
-  &lt;div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"&gt;&lt;/div&gt;
-  &lt;span class="text-emerald-700 font-medium text-sm tracking-tight"&gt;
+            <h3 class="text-2xl font-light text-slate-300 mb-6 tracking-tight">Status Indicator</h3>
+            <div class="bg-slate-900/80 p-6 rounded-xl mb-8 border border-slate-600/30 overflow-x-auto backdrop-blur-sm">
+                <code class="text-emerald-300 text-sm font-mono whitespace-pre-wrap">
+&lt;div class="flex items-center gap-3 p-3 bg-emerald-500/20 
+           backdrop-blur-sm rounded-xl border border-emerald-400/30"&gt;
+  &lt;div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"&gt;&lt;/div&gt;
+  &lt;span class="text-emerald-200 font-medium text-sm tracking-tight"&gt;
     Status Text
   &lt;/span&gt;
 &lt;/div&gt;</code>
